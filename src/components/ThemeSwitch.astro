@@ -1,0 +1,230 @@
+---
+interface Props {
+	centered?: boolean;
+	size?: 'sm' | 'md';
+}
+
+const { centered = false, size = 'md' } = Astro.props;
+---
+
+<div class:list={['theme-switch-wrapper', { centered }]}>
+	<license-theme-toggle data-size={size}>
+		<button class="theme-switch" type="button" aria-label="Toggle dark mode">
+			<span class="theme-switch-orb" aria-hidden="true">
+				<span class="icon sun-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+				</span>
+				<span class="icon moon-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+				</span>
+			</span>
+			<span class="theme-switch-text">Mode</span>
+		</button>
+	</license-theme-toggle>
+</div>
+
+<style>
+	.theme-switch-wrapper.centered {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.75rem;
+	}
+
+	license-theme-toggle {
+		display: inline-flex;
+	}
+
+	.theme-switch {
+		--toggle-accent: #5865f2;
+		--toggle-border: color-mix(in srgb, var(--toggle-accent) 22%, var(--sl-color-hairline));
+		--toggle-bg-top: color-mix(in srgb, var(--sl-color-bg-nav) 84%, white 16%);
+		--toggle-bg-bottom: color-mix(in srgb, var(--sl-color-bg) 88%, white 12%);
+		--toggle-text: var(--sl-color-gray-2);
+		--toggle-gap: 0.7rem;
+		--toggle-font-size: 0.82rem;
+		--toggle-padding-y: 0.42rem;
+		--toggle-padding-right: 0.95rem;
+		--toggle-padding-left: 0.45rem;
+		--toggle-orb-size: 2rem;
+		--toggle-icon-size: 1rem;
+		display: flex;
+		align-items: center;
+		gap: var(--toggle-gap);
+		padding: var(--toggle-padding-y) var(--toggle-padding-right) var(--toggle-padding-y)
+			var(--toggle-padding-left);
+		border-radius: 999px;
+		border: 1px solid var(--toggle-border);
+		background: linear-gradient(180deg, var(--toggle-bg-top) 0%, var(--toggle-bg-bottom) 100%);
+		box-shadow:
+			0 1px 0 color-mix(in srgb, #fff 70%, transparent) inset,
+			0 12px 26px color-mix(in srgb, #5865f2 10%, transparent);
+		color: var(--toggle-text);
+		font-size: var(--toggle-font-size);
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		transition:
+			transform 180ms ease,
+			border-color 180ms ease,
+			box-shadow 180ms ease,
+			color 180ms ease,
+			background 180ms ease;
+		cursor: pointer;
+		line-height: 1;
+	}
+
+	license-theme-toggle[data-size='sm'] .theme-switch {
+		--toggle-gap: 0.5rem;
+		--toggle-font-size: 0.73rem;
+		--toggle-padding-y: 0.3rem;
+		--toggle-padding-right: 0.72rem;
+		--toggle-padding-left: 0.34rem;
+		--toggle-orb-size: 1.58rem;
+		--toggle-icon-size: 0.82rem;
+	}
+
+	:root[data-theme='dark'] .theme-switch {
+		--toggle-accent: #7f8cff;
+		--toggle-border: color-mix(in srgb, var(--toggle-accent) 28%, var(--sl-color-hairline));
+		--toggle-bg-top: color-mix(in srgb, #182038 72%, var(--sl-color-bg-nav) 28%);
+		--toggle-bg-bottom: color-mix(in srgb, #0f1527 82%, var(--sl-color-bg) 18%);
+		--toggle-text: color-mix(in srgb, #fff 86%, var(--sl-color-gray-2));
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.06) inset,
+			0 16px 30px rgba(88, 101, 242, 0.18);
+	}
+
+	.theme-switch:hover {
+		transform: translateY(-1px);
+		color: var(--sl-color-white);
+		border-color: color-mix(in srgb, var(--toggle-accent) 42%, var(--sl-color-hairline));
+		box-shadow:
+			0 1px 0 color-mix(in srgb, #fff 75%, transparent) inset,
+			0 16px 32px color-mix(in srgb, var(--toggle-accent) 18%, transparent);
+	}
+
+	.theme-switch:focus-visible {
+		outline: 2px solid color-mix(in srgb, var(--toggle-accent) 62%, white);
+		outline-offset: 3px;
+	}
+
+	.theme-switch-orb {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--toggle-orb-size);
+		height: var(--toggle-orb-size);
+		border-radius: 999px;
+		background:
+			radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.38) 28%, transparent 62%),
+			linear-gradient(180deg,
+				color-mix(in srgb, var(--toggle-accent) 22%, white 78%) 0%,
+				color-mix(in srgb, var(--toggle-accent) 10%, white 90%) 100%);
+		color: var(--toggle-accent);
+		border: 1px solid color-mix(in srgb, var(--toggle-accent) 24%, white);
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.9) inset,
+			0 10px 20px color-mix(in srgb, var(--toggle-accent) 18%, transparent);
+		flex: 0 0 auto;
+	}
+
+	:root[data-theme='dark'] .theme-switch-orb {
+		background:
+			radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 34%, transparent 62%),
+			linear-gradient(180deg,
+				color-mix(in srgb, var(--toggle-accent) 24%, #17203b 76%) 0%,
+				color-mix(in srgb, var(--toggle-accent) 14%, #0d1325 86%) 100%);
+		color: #d7dcff;
+		border-color: color-mix(in srgb, var(--toggle-accent) 34%, rgba(255, 255, 255, 0.08));
+	}
+
+	.icon {
+		display: none;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.icon svg {
+		width: var(--toggle-icon-size);
+		height: var(--toggle-icon-size);
+	}
+
+	:root[data-theme='dark'] .sun-icon {
+		display: flex;
+	}
+
+	:root[data-theme='light'] .moon-icon {
+		display: flex;
+	}
+
+	.theme-switch-text {
+		line-height: 1;
+		white-space: nowrap;
+	}
+</style>
+
+<script>
+	type Theme = 'dark' | 'light';
+
+	function getStoredTheme(): Theme {
+		return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+	}
+
+	function setTheme(theme: Theme): void {
+		document.documentElement.dataset.theme = theme;
+		localStorage.setItem('starlight-theme', theme);
+		window.dispatchEvent(new CustomEvent('starlight-theme-changed', { detail: { theme } }));
+	}
+
+	class LicenseThemeToggle extends HTMLElement {
+		button: HTMLButtonElement | null = null;
+		text: HTMLElement | null = null;
+		observer?: MutationObserver;
+
+		connectedCallback() {
+			this.button = this.querySelector('button');
+			this.text = this.querySelector('.theme-switch-text');
+			this.button?.addEventListener('click', this.handleClick);
+			window.addEventListener('starlight-theme-changed', this.handleThemeEvent as EventListener);
+			this.observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.attributeName === 'data-theme') this.updateUI();
+				});
+			});
+			this.observer.observe(document.documentElement, { attributes: true });
+			this.updateUI();
+		}
+
+		disconnectedCallback() {
+			this.button?.removeEventListener('click', this.handleClick);
+			window.removeEventListener(
+				'starlight-theme-changed',
+				this.handleThemeEvent as EventListener
+			);
+			this.observer?.disconnect();
+		}
+
+		handleClick = () => {
+			const theme = getStoredTheme();
+			setTheme(theme === 'dark' ? 'light' : 'dark');
+			this.updateUI();
+		};
+
+		handleThemeEvent = () => {
+			this.updateUI();
+		};
+
+		updateUI() {
+			const isDark = getStoredTheme() === 'dark';
+			const nextTheme = isDark ? 'light' : 'dark';
+			if (this.text) {
+				this.text.textContent = `${isDark ? 'Light' : 'Dark'} Mode`;
+			}
+			this.button?.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+			this.button?.setAttribute('title', `Switch to ${nextTheme} mode`);
+		}
+	}
+
+	if (!customElements.get('license-theme-toggle')) {
+		customElements.define('license-theme-toggle', LicenseThemeToggle);
+	}
+</script>

@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import ThemeToggle from './ThemeToggle.astro';
+import wpAnchorBayLogo from '../assets/wpanchorbay-logo.svg';
+import { EXTERNAL_LINKS } from '../lib/links';
+---
+
+<footer class="license-footer">
+	<p class="license-footer-kicker">Brought to you by</p>
+	<a href={EXTERNAL_LINKS.wpAnchorBay} class="license-footer-logo">
+		<Image
+			src={wpAnchorBayLogo}
+			alt="WPAnchorBay"
+			title="WPAnchorBay"
+			class="wpanchor-bay-logo"
+			style="border: none;"
+			width={260}
+			height={50}
+		/>
+	</a>
+	<p>
+		Revolutionizing and Forging the Future of WordPress with Cutting-Edge,
+		State-of-the-Art Plugins Designed Exclusively for WooCommerce.
+	</p>
+	<a href={EXTERNAL_LINKS.wpAnchorBay}>Learn more about WPAnchorBay</a>
+
+	<ThemeToggle />
+</footer>

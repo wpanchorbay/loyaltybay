@@ -1,0 +1,108 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+	label: string;
+	icon: string;
+	width?: string;
+	options: Array<{
+		label: string;
+		value: string;
+		selected: boolean;
+	}>;
+}
+---
+
+<label class="license-select" style={`--sl-select-width: ${Astro.props.width ?? '6.25em'}`}>
+	<span class="sr-only">{Astro.props.label}</span>
+	<Icon name={Astro.props.icon} class="icon label-icon" />
+	<select autocomplete="off">
+		{
+			Astro.props.options.map(({ value, selected, label }) => (
+				<option value={value} selected={selected} set:html={label} />
+			))
+		}
+	</select>
+	<Icon name="down-caret" class="icon caret" />
+</label>
+
+<style>
+	@layer starlight.core {
+		.license-select {
+			--sl-label-icon-size: 0.9rem;
+			--sl-caret-size: 1rem;
+			--sl-inline-padding: 0.65rem;
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			color: var(--sl-color-gray-2);
+			border: 1px solid color-mix(in srgb, var(--sl-color-hairline) 84%, transparent);
+			border-radius: 999px;
+			background:
+				linear-gradient(180deg,
+					color-mix(in srgb, #5865f2 10%, var(--sl-color-bg-nav) 90%) 0%,
+					var(--sl-color-bg-nav) 100%);
+			box-shadow: 0 10px 24px color-mix(in srgb, #5865f2 10%, transparent);
+			transition:
+				border-color 160ms ease,
+				color 160ms ease,
+				transform 160ms ease,
+				box-shadow 160ms ease;
+		}
+
+		.license-select:hover {
+			color: var(--sl-color-white);
+			border-color: color-mix(in srgb, #5865f2 40%, var(--sl-color-hairline));
+			box-shadow: 0 14px 28px color-mix(in srgb, #5865f2 18%, transparent);
+			transform: translateY(-1px);
+		}
+
+		.icon {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			pointer-events: none;
+		}
+
+		select {
+			border: 0;
+			padding-block: 0.55rem;
+			padding-inline: calc(var(--sl-label-icon-size) + var(--sl-inline-padding) + 0.55rem)
+				calc(var(--sl-caret-size) + var(--sl-inline-padding) + 0.55rem);
+			width: calc(var(--sl-select-width) + var(--sl-inline-padding) * 2);
+			background-color: transparent;
+			color: inherit;
+			cursor: pointer;
+			appearance: none;
+			font: inherit;
+			line-height: 1.2;
+		}
+
+		select:focus {
+			outline: none;
+		}
+
+		option {
+			background-color: var(--sl-color-bg-nav);
+			color: var(--sl-color-gray-1);
+		}
+
+		@media (min-width: 50rem) {
+			select {
+				font-size: var(--sl-text-sm);
+			}
+		}
+	}
+
+	@layer starlight.components {
+		.label-icon {
+			font-size: var(--sl-label-icon-size);
+			inset-inline-start: 0.75rem;
+		}
+
+		.caret {
+			font-size: var(--sl-caret-size);
+			inset-inline-end: 0.7rem;
+		}
+	}
+</style>

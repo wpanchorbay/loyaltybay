@@ -1,0 +1,97 @@
+---
+title: Welcome to LoyaltyBay Docs
+description: Documentation for LoyaltyBay - WooCommerce Loyalty & Rewards Points System.
+template: splash
+prev: false
+next: false
+head:
+  # OpenGraph metadata
+  - tag: meta
+    attrs:
+      property: og:url
+      content: https://docs.loyaltybay.com/loyaltybay/
+  - tag: meta
+    attrs:
+      property: og:type
+      content: website
+  - tag: meta
+    attrs:
+      property: og:title
+      content: Welcome to LoyaltyBay Docs
+  - tag: meta
+    attrs:
+      property: og:description
+      content: Documentation for LoyaltyBay - WooCommerce Loyalty & Rewards Points System.
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.loyaltybay.com/loyaltybay/assets/WPAnchorBay-Documentation-OG.png
+  - tag: meta
+    attrs:
+      property: og:image:alt
+      content: LoyaltyBay Docs – WooCommerce Loyalty & Rewards
+  - tag: meta
+    attrs:
+      property: og:image:width
+      content: "1200"
+  - tag: meta
+    attrs:
+      property: og:image:height
+      content: "630"
+  # Twitter / X Card metadata
+  - tag: meta
+    attrs:
+      name: twitter:card
+      content: summary_large_image
+  - tag: meta
+    attrs:
+      name: twitter:title
+      content: Welcome to LoyaltyBay Docs
+  - tag: meta
+    attrs:
+      name: twitter:description
+      content: Documentation for LoyaltyBay - WooCommerce Loyalty & Rewards Points System.
+  - tag: meta
+    attrs:
+      name: twitter:image
+      content: https://docs.loyaltybay.com/loyaltybay/assets/WPAnchorBay-Documentation-OG.png
+  - tag: meta
+    attrs:
+      name: twitter:image:alt
+      content: LoyaltyBay Docs – WooCommerce Loyalty & Rewards
+hero:
+  tagline: A high-performance WooCommerce loyalty and rewards engine. Incentivize customer behavior, reward repeat purchases, and build a premium brand experience.
+  image:
+    alt: LoyaltyBay Logo
+    file: ~/assets/wpanchorbay-icon.png
+  actions:
+    - text: Get Started
+      link: /loyaltybay/getting-started/installation/
+      icon: right-arrow
+      variant: primary
+    - text: View Settings Reference
+      link: /loyaltybay/admin/settings-reference/
+      icon: setting
+      variant: minimal
+---
+
+import { CardGrid } from '@astrojs/starlight/components';
+import Card from '../../components/starlight/Card.astro';
+import WPAnchorBayFooter from '../../components/WPAnchorBayFooter.astro';
+
+<CardGrid stagger>
+	<Card title="Earning Points" icon="pencil">
+		Award points automatically on WooCommerce order completion. Setup custom rules for customer registration, product reviews, and category-specific exclusions.
+	</Card>
+	<Card title="Flexible Redemption" icon="rocket">
+		Provide slider-based or manual-input point redemption directly at checkout. Fully compatible with WooCommerce Block Checkout and Classic layouts.
+	</Card>
+	<Card title="VIP Loyalty Tiers" icon="star">
+		Motivate customers with automatically recalculated VIP Tiers. Define thresholds and point multipliers to reward your highest-value buyers.
+	</Card>
+	<Card title="Refer-a-Friend System" icon="open-book">
+		Acquire customers organically with unique referral links. Features cookie-based tracking and first-purchase rewards for both referrers and referees.
+	</Card>
+</CardGrid>
+
+<WPAnchorBayFooter />

@@ -1,0 +1,111 @@
+Standardized Spotlight Screenshot Procedure
+
+When capturing a highlighted screenshot for the LoyaltyBay documentation, follow this exact sequence to ensure visual consistency across all images.
+
+1. Environment Preparation
+- Login Credentials: Username is "admin", Password is "password".
+- Browser Window: Ensure the browser is sized to a standard 1400x900 viewport.
+- Page State: Navigate to the correct URL and perform a hard reload to clear any lingering DOM manipulation from previous captures.
+
+2. Locating the Target
+- Use the class or ID of the element to target it.
+- If you cannot find the target element in the DOM, check the plugin source code in `/var/www/html/wp-content/plugins/loyaltybay/` to find the correct CSS class or ID used by the component.
+
+3. Spotlight Injection & Crop Calculation
+Evaluate this JavaScript in the browser to apply the spotlight, hide scrollbars, and calculate the dynamic crop dimensions:
+
+() => {
+    // Hide scrollbars completely
+    if (!document.getElementById('hide-scrollbars-style')) {
+        const style = document.createElement('style');
+        style.id = 'hide-scrollbars-style';
+        style.innerHTML = '::-webkit-scrollbar { display: none !important; } * { -ms-overflow-style: none !important; scrollbar-width: none !important; } body { overflow: hidden !important; }';
+        document.head.appendChild(style);
+    }
+
+    // Locate Target (REPLACE SELECTOR BEFORE RUNNING)
+    const targetSelector = '.target-class-name'; 
+    const el = document.querySelector(targetSelector);
+    if (!el) throw new Error(`Target ${targetSelector} not found`);
+    el.scrollIntoView({ behavior: 'instant', block: 'center' });
+
+    // Calculate Spotlight Padding & Coordinates
+    const rect = el.getBoundingClientRect();
+    const padding = 15;
+
+    const t = Math.max(0, rect.top - padding);
+    const l = Math.max(0, rect.left - padding);
+    const r = Math.min(window.innerWidth, rect.right + padding);
+    const b = Math.min(window.innerHeight, rect.bottom + padding);
+
+    // Apply Spotlight Overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'loyaltybay-spotlight-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+    overlay.style.zIndex = '999999';
+    overlay.style.pointerEvents = 'none';
+    overlay.style.clipPath = `polygon(
+      0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%, 
+      ${l}px ${t}px, ${r}px ${t}px, ${r}px ${b}px, ${l}px ${b}px, ${l}px ${t}px
+    )`;
+    document.body.appendChild(overlay);
+
+    el.style.position = 'relative';
+    el.style.zIndex = '1000000';
+    el.style.backgroundColor = '#ffffff';
+
+    // Dynamically calculate crop dimensions
+    let cropX = 0;
+    let cropY = 0;
+
+    // Hide LoyaltyBay TopProgressBar during screenshot
+    const lbProgressBar = document.querySelector('.lb-fixed.lb-top-0');
+    if (lbProgressBar) {
+        lbProgressBar.style.display = 'none';
+    }
+
+    // Remove Top Admin Bar if present (Frontend & Backend)
+    const wpadminbar = document.querySelector('#wpadminbar');
+    if (wpadminbar && window.getComputedStyle(wpadminbar).display !== 'none') {
+        // Keep the admin bar if the target element is inside it
+        if (!wpadminbar.contains(el)) {
+            cropY = wpadminbar.getBoundingClientRect().bottom;
+        }
+    }
+
+    // Remove Left Admin Menu if we are in the WordPress Backend
+    const isWpAdmin = document.body.classList.contains('wp-admin');
+    const wpcontent = document.querySelector('#wpcontent');
+    const adminmenuwrap = document.querySelector('#adminmenuwrap');
+    if (isWpAdmin && wpcontent) {
+        // Keep the admin menu if the target element is inside it
+        if (!adminmenuwrap || !adminmenuwrap.contains(el)) {
+            cropX = wpcontent.getBoundingClientRect().left;
+        }
+    }
+
+    const cropWidth = window.innerWidth - cropX;
+    const cropHeight = window.innerHeight - cropY;
+
+    return { cropWidth, cropHeight, cropX, cropY };
+}
+
+4. Capture
+- Take a standard viewport screenshot using mcp_chrome-devtools_take_screenshot (no uid, no fullPage).
+- Save to public/assets/screenshots/<filename>.png
+
+5. Crop
+- Use the dimensions returned by the script to crop the image.
+- Run: mogrify -crop {cropWidth}x{cropHeight}+{cropX}+{cropY} +repage public/assets/screenshots/<filename>.png
+
+6. Verification (MANDATORY)
+- After taking and cropping every screenshot, you MUST manually verify the saved image.
+- Do not just check that the file exists or its name.
+- Check the actual visual content of the image:
+  - Ensure the spotlight is applied correctly and the target element is highlighted.
+  - Ensure the admin menu (sidebar) and admin navbar (top bar) are COMPLETELY cropped out.

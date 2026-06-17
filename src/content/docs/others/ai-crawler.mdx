@@ -1,0 +1,14 @@
+---
+title: Meta files and discovery endpoints
+description: Learn more about Astro Starlight.
+---
+
+These public machine-readable files help crawlers, agents, and automation discover the docs and related integration metadata:
+
+- [robots.txt](../../robots.txt) for crawler policy and the sitemap reference.
+- [llms.txt](../../llms.txt) for the concise LLM-friendly overview of the documentation set. This endpoint is also advertised with a site-wide `<link rel="alternate">` tag.
+- [llms-full.txt](../../llms-full.txt) for the expanded plain-text export of the docs corpus. This endpoint is also advertised with a site-wide `<link rel="alternate">` tag.
+- Per-page Markdown/MDX source exports under `/markdown/` (`<base>/markdown/<page-slug>.md`), for example [markdown/index.md](../../markdown/index.md) or [markdown/others/ai-crawler.md](../../markdown/others/ai-crawler.md). Each documentation page advertises its own export with a page-specific `<link rel="alternate" type="text/markdown">` tag.
+- [sitemap-index.xml](../../sitemap-index.xml) for the top-level sitemap index.
+- [sitemap-0.xml](../../sitemap-0.xml) for the generated URL list currently referenced by the sitemap index.
+- [.well-known/mcp.json](../../.well-known/mcp.json) for MCP discovery metadata related to the public documentation site.

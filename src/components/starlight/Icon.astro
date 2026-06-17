@@ -1,0 +1,44 @@
+---
+import { filledIcons, iconMap } from './icon-map';
+
+interface Props {
+	name: string;
+	label?: string;
+	color?: string;
+	size?: string;
+	class?: string;
+}
+
+const { name, label, size = '1em', color } = Astro.props;
+const markup = iconMap[name as keyof typeof iconMap] ?? '<circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/>';
+const isFilled = filledIcons.has(name as keyof typeof iconMap);
+const a11yAttrs = label ? ({ 'aria-label': label } as const) : ({ 'aria-hidden': 'true' } as const);
+---
+
+<>
+	<svg
+		{...a11yAttrs}
+		class={Astro.props.class}
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill={isFilled ? 'currentColor' : 'none'}
+		stroke={isFilled ? 'none' : 'currentColor'}
+		stroke-width={isFilled ? undefined : '1.9'}
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		set:html={markup}
+	/>
+</>
+
+<style define:vars={{ 'sl-icon-color': color, 'sl-icon-size': size }}>
+	@layer starlight.components {
+		svg {
+			color: var(--sl-icon-color);
+			font-size: var(--sl-icon-size, 1em);
+			width: 1em;
+			height: 1em;
+			flex-shrink: 0;
+		}
+	}
+</style>

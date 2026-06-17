@@ -1,0 +1,34 @@
+---
+title: Not found
+description: The page you requested is not found.
+template: splash
+editUrl: false
+lastUpdated: false
+prev: false
+next: false
+pagefind: false
+hero:
+  title: Lost the route?
+  tagline: "404: The page you requested is not found."
+  image:
+    # ASSET_LINKS.icon — cannot use JS expressions in YAML frontmatter
+    html: '<div class="license-404-mark-wrap" aria-hidden="true"><div class="license-404-mark-glow"></div><div class="license-404-mark-shell"><svg class="license-404-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 215" role="img"><path fill="#39cccc" d="M52.8 0h107.5c29.6 0 53.7 24.1 53.7 53.8v107.4c0 29.7-24.1 53.8-53.7 53.8H52.8C23.1 215-.9 190.9-.9 161.2V53.8C-.9 24.1 23.1 0 52.8 0Z"/><path fill="#001f3f" d="M168.9 104.3c.1 1.1.1 2.1.1 3.2 0 34.6-28.1 62.7-62.7 62.7-34.7 0-62.7-28.1-62.7-62.7v-3.2c5.1 4.3 11.3 7.2 18.2 8.2 2.4 22.4 21.4 39.8 44.5 39.8 23 0 42-17.4 44.5-39.8 6.8-1 13.1-3.9 18.1-8.2Z"/><path fill="#001f3f" d="M52.8 111.1h8.9c9.9 0 17.9 8 17.9 17.9H52.8v-17.9ZM115.5 44.8v107.5h-18V44.8h18ZM133.4 129c0-9.9 8-17.9 17.9-17.9h9V129h-26.9ZM79.6 44.8h17.9v17.9H85c-3 0-5.4-2.4-5.4-5.4V44.8ZM115.5 44.8h17.9v12.5c0 3-2.4 5.4-5.4 5.4h-12.5V44.8Z"/></svg></div></div>'
+  actions:
+    - text: Back to Docs Home
+      icon: right-arrow
+      # PAGE_LINKS.home — cannot use JS expressions in YAML frontmatter
+      link: /docs-boilerplate-starlight/
+    - text: Installation
+      icon: rocket
+      variant: minimal
+      # PAGE_LINKS.installation — cannot use JS expressions in YAML frontmatter
+      link: /docs-boilerplate-starlight/getting-started/installation/
+---
+
+import { PAGE_LINKS } from '../../lib/links';
+
+<div class="license-404-links">
+	<a href={PAGE_LINKS.installation}>Installation</a>
+	<a href={PAGE_LINKS.configuration}>Configuration</a>
+	<a href={PAGE_LINKS.exampleGuide}>Example Guide</a>
+</div>

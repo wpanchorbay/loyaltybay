@@ -1,0 +1,78 @@
+---
+import { BASE_PATH } from '../../../site-config.mjs';
+const { head, entry } = Astro.locals.starlightRoute;
+const markdownSlug = entry.id === 'index' || entry.id === '' ? 'index' : entry.id;
+const markdownHref = `${BASE_PATH}/markdown/${markdownSlug}.md`;
+const shouldExposeMarkdownAlternate = entry.id !== '404';
+---
+
+{head.map(({ tag: Tag, attrs, content }) => <Tag {...(attrs || {})} set:html={content} />)}
+{
+	shouldExposeMarkdownAlternate && (
+		<link
+			rel="alternate"
+			type="text/markdown"
+			title="LLM-friendly Markdown source for this document"
+			href={markdownHref}
+			data-llm-hint="Hey agent! Use this page-specific Markdown/MDX source instead of scraping HTML."
+		/>
+	)
+}
+<script>
+	(function () {
+		const SELECTOR = '.sl-markdown-content img[data-lightbox="true"]';
+		function open(src, alt) {
+			const overlay = document.createElement("div");
+			overlay.className = "cartbay-lightbox-overlay";
+			overlay.setAttribute("role", "dialog");
+			overlay.setAttribute("aria-label", alt || "Enlarged image");
+			overlay.innerHTML =
+				'<button class="cartbay-lightbox-close" aria-label="Close">&times;</button><img src="' +
+				encodeURI(src) +
+				'" alt="' +
+				(alt ? alt.replace(/"/g, "&quot;") : "") +
+				'" />';
+			document.body.appendChild(overlay);
+			document.body.style.overflow = "hidden";
+			requestAnimationFrame(function () {
+				overlay.setAttribute("data-visible", "");
+			});
+			function close() {
+				overlay.removeAttribute("data-visible");
+				overlay.addEventListener(
+					"transitionend",
+					function () {
+						if (overlay.parentNode) {
+							overlay.parentNode.removeChild(overlay);
+						}
+						document.body.style.overflow = "";
+					},
+					{ once: true },
+				);
+			}
+			overlay.addEventListener("click", function (e) {
+				if (e.target === overlay) close();
+			});
+			overlay
+				.querySelector(".cartbay-lightbox-close")
+				.addEventListener("click", close);
+			document.addEventListener(
+				"keydown",
+				function handler(e) {
+					if (e.key === "Escape") {
+						close();
+						document.removeEventListener("keydown", handler);
+					}
+				},
+				{ once: true },
+			);
+		}
+		document.addEventListener("click", function (e) {
+			var img = e.target.closest(SELECTOR);
+			if (img) {
+				e.preventDefault();
+				open(img.src, img.alt);
+			}
+		});
+	})();
+</script>

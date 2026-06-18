@@ -105,7 +105,6 @@ export default defineConfig({
             { label: "Redeeming Points", slug: "features/redeeming-points" },
             { label: "VIP Tiers", slug: "features/vip-tiers" },
             { label: "Referral Program", slug: "features/referral-program" },
-            { label: "Points Expiry", slug: "features/points-expiry" },
             { label: "Customer Dashboard", slug: "features/customer-dashboard" },
           ],
         },

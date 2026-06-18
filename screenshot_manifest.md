@@ -52,16 +52,6 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 - **Description**: Settings page, Earning Points section.
 - **Key Highlight**: The input boxes for "Points for Registration" and "Points for Product Review".
 
-### `earning-exclusions.png`
-- **Used in**: `features/earning-points.md` -> Section: *Product/Category Exclusions*
-- **Description**: Settings page, Earning Points section.
-- **Key Highlight**: The multi-select fields for "Excluded Products" and "Excluded Categories" containing sample tags.
-
-### `earning-limit-cap.png`
-- **Used in**: `features/earning-points.md` -> Section: *Earning Limits*
-- **Description**: Settings page, Earning Points section.
-- **Key Highlight**: The "Max Points per Order" input field.
-
 ### `earning-checkout-notice.png`
 - **Used in**: `features/earning-points.md` -> Section: *Checkout Earn Notice*
 - **Description**: The checkout page frontend (Block Checkout layout).
@@ -105,17 +95,12 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 ### `referrals-admin-settings.png`
 - **Used in**: `features/referral-program.md` -> Section: *Referral Settings*
 - **Description**: Settings page, Referrals & VIP Tiers tab.
-- **Key Highlight**: Checkbox for "Enable Referrals", and inputs for "Referrals Bonus Points" and "New Customer Discount".
+- **Key Highlight**: Checkbox for "Enable Referrals", and inputs for "Referrals Bonus Points".
 
 ### `referrals-my-account-link.png`
 - **Used in**: `features/referral-program.md` -> Section: *Customer My Account Referral panel*
 - **Description**: Customer's My Account -> My Rewards page.
 - **Key Highlight**: The Referral Link card featuring the unique URL `/?ref=X` and the "Copy URL" button.
-
-### `expiry-admin-settings.png`
-- **Used in**: `features/points-expiry.md` -> Section: *Expiry Rules*
-- **Description**: Settings page showing the planned points expiry toggles and input fields.
-- **Key Highlight**: Expiry enabled state and days inputs.
 
 ### `dashboard-balance-widget.png`
 - **Used in**: `features/customer-dashboard.md` -> Section: *Points Balance widget*
@@ -136,11 +121,6 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 - **Description**: Admin screen at `WooCommerce > Loyalty`.
 - **Key Highlight**: The main transactions ledger list showing paginated user point entries.
 
-### `ledger-filters.png`
-- **Used in**: `admin/points-ledger.md` -> Section: *Filtering Options*
-- **Description**: The filter bar at the top of the Admin Ledger page.
-- **Key Highlight**: Filter inputs: user selection, transaction type dropdown, reference type dropdown, and date-range inputs.
-
 ### `ledger-export-btn.png`
 - **Used in**: `admin/points-ledger.md` -> Section: *CSV Export*
 - **Description**: Top right action bar on the Admin Ledger page.
@@ -148,7 +128,7 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 
 ### `ledger-adjust-points-modal.png`
 - **Used in**: `admin/manual-adjustments.md` -> Section: *Adjust Points Form*
-- **Description**: Admin Ledger page with the manual adjustment dialog modal overlay active.
+- **Description**: Admin Ledger page with the inline manual adjustment form expanded.
 - **Key Highlight**: Form inputs: search user autocomplete, action select (Credit/Debit), points amount, and reason.
 
 ### `ledger-manual-entry-log.png`
@@ -160,12 +140,3 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 - **Used in**: `admin/settings-reference.md` -> Section: *WooCommerce Integration Settings Tab*
 - **Description**: WooCommerce Settings page showing the tabbed interface.
 - **Key Highlight**: The tab bar containing "Earning Points", "Redemption Rules", "Referrals & VIP Tiers", and "Display & System".
-
----
-
-## 4. Resources
-
-### `troubleshooting-debug-toggle.png`
-- **Used in**: `resources/troubleshooting.md` -> Section: *Debug Mode*
-- **Description**: Admin Settings page under Display & System section.
-- **Key Highlight**: The "Debug Mode" toggle checkbox.

@@ -15,7 +15,6 @@ The LoyaltyBay Referral Program turns your customers into brand advocates by rew
 4.  **Purchase**: The new customer completes their first order.
 5.  **Reward**:
     *   The **Referrer** receives bonus points (e.g. 1,000 points).
-    *   The **Referee** (new customer) receives their first-order discount.
 
 ---
 

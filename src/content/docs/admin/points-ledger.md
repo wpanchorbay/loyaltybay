@@ -24,6 +24,7 @@ To view the ledger:
     *   `Credit` (Green): Points added to the balance.
     *   `Debit` (Red): Points deducted from the balance.
 *   **Amount**: The number of points added or subtracted.
+*   **Origin**: Source of the transaction: `SYSTEM` (automated hooks) or `ADMIN` (manual adjustments).
 *   **Reference Type**: The source event that triggered the transaction. Valid references are:
     *   `order` — Points earned on a WooCommerce purchase.
     *   `refund` — Points deducted due to a full or partial refund.
@@ -38,29 +39,13 @@ To view the ledger:
 
 ---
 
-## Filtering Options
-
-To search and audit transactions, use the filter panel located above the ledger table:
-
-![Ledger Filters Panel](/assets/screenshots/ledger-filters.png)
-
-*   **Search User**: An autocomplete multi-select field. Search by username, display name, or email. You can filter by multiple users simultaneously.
-*   **Transaction Type**: Dropdown to filter by `Credit` only or `Debit` only.
-*   **Reference Type**: Filter by specific event sources (e.g. view only `refund` or `admin` entries).
-*   **Date Range**: Date selectors to limit results to a specific timeframe (Start Date and End Date).
-
-Filters combine dynamically and update the ledger table instantly via the REST API.
-
----
-
 ## CSV Export
 
 You can export ledger reports for accounting, auditing, or marketing operations:
 
-1.  Apply any desired filters in the filter panel.
-2.  Click the **Export to CSV** button in the top right action bar.
-3.  The browser will automatically download the CSV file containing the filtered records.
+1.  Click the **Export to CSV** button in the top right action bar.
+2.  The browser will automatically download the CSV file containing the ledger records.
 
 ![CSV Export Button](/assets/screenshots/ledger-export-btn.png)
 
-*The CSV export query matches the active ledger filters exactly but ignores table pagination limits, exporting the entire filtered dataset.*
+*The CSV export ignores table pagination limits, exporting the entire ledger dataset.*

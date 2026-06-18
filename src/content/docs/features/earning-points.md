@@ -1,6 +1,6 @@
 ---
 title: Earning Points
-description: Detailed guide on configuring points earning rules, calculations, product/category exclusions, notices, and refund clawbacks.
+description: Detailed guide on configuring points earning rules, calculations, notices, and refund clawbacks.
 ---
 
 LoyaltyBay Pro provides a robust points earning engine. Customers can earn points automatically for purchase orders, account registrations, and product reviews.
@@ -19,12 +19,6 @@ Points are written to the database ledger through two main paths:
 ## Earning Settings & Trigger Hooks
 
 Settings are managed in **WooCommerce > Settings > Loyalty Points > Earning Points**.
-
-### Order Status Trigger
-*   **Settings Key**: `earning_orderStatusTrigger`
-*   **Behavior**: When a customer's order transitions, WordPress hooks into the order lifecycle.
-*   **Backend Implementation**: Subscribes to the order status transition hook. By default, this is `woocommerce_order_status_completed` (priority 20). If you set the trigger to "Processing" in settings, it will hook into `woocommerce_order_status_processing`.
-*   **Order Meta**: Once points are awarded, the order meta key `_loyaltybay_points_earned` is written to prevent duplicate processing.
 
 ### Account Registration Bonus
 *   **Settings Key**: `earning_pointsForRegistration`
@@ -53,7 +47,7 @@ $$\text{Points} = \text{floor}(\text{Eligible Subtotal} \times \text{Earning Rat
 The eligible subtotal is the base monetary amount used to calculate points.
 *   **Excluded**: Shipping costs, taxes, coupon discounts, and points redeemed at checkout are subtracted.
 *   **Base Formula**:
-    $$\text{Eligible Subtotal} = \text{Subtotal} - \text{Discount Value} - \text{Excluded Items Value}$$
+    $$\text{Eligible Subtotal} = \text{Subtotal} - \text{Discount Value}$$
 
 ### 2. Earning Ratio
 Defined by the *Points per dollar* (`earning_pointsPerDollar`) setting.
@@ -67,20 +61,18 @@ Determined by the customer's current level in the VIP Tiers manager (e.g. `1.5` 
 
 A Gold Tier customer (2.0x earning multiplier) makes a purchase with the following cart composition:
 
-*   **Standard Product A**: $80.00 (Eligible)
-*   **Sale Product B**: $40.00 (Eligible)
-*   **Excluded Product C**: $30.00 (Excluded via Product Exclusions setting)
+*   **Standard Product A**: $80.00
+*   **Sale Product B**: $40.00
 *   **Coupon Code Discount**: $10.00 (Applied to cart)
 *   **Shipping Fee**: $15.00
 *   **VAT Tax**: $10.00
 *   **Earning Ratio Setting**: 1 point per $1
 
 #### Subtotal Calculation:
-1.  **Gross Items Subtotal**: $\$80.00 + \$40.00 + \$30.00 = \$150.00$
-2.  **Deduct Exclusions**: Subtract Excluded Product C ($\$30.00$) -> $\$120.00$
-3.  **Deduct Coupon**: Subtract Discount ($\$10.00$) -> $\$110.00$
-4.  **Ignore Shipping & Tax**: Shipping ($\$15.00$) and Tax ($\$10.00$) are ignored.
-5.  **Eligible Subtotal** = $\$110.00$
+1.  **Gross Items Subtotal**: $\$80.00 + \$40.00 = \$120.00$
+2.  **Deduct Coupon**: Subtract Discount ($\$10.00$) -> $\$110.00$
+3.  **Ignore Shipping & Tax**: Shipping ($\$15.00$) and Tax ($\$10.00$) are ignored.
+4.  **Eligible Subtotal** = $\$110.00$
 
 #### Points Earning Calculation:
 $$\text{Base Points} = \$110.00 \times 1\text{ pt/\$} = 110\text{ points}$$

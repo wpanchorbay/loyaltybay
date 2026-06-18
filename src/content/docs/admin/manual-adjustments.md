@@ -12,7 +12,7 @@ Store administrators can manually adjust any customer's points balance directly 
 To perform a manual adjustment:
 
 1.  Navigate to **WooCommerce > Loyalty**.
-2.  Click the **Adjust Points** button at the top of the page. This opens the adjustment modal form.
+2.  Click the **Adjust Points** button at the top of the page. This expands the inline adjustment form.
 3.  Fill out the form fields:
     *   **User Selection**: Search for the customer by name or email. You can select multiple users to apply the same adjustment in bulk.
     *   **Action**: Choose either **Credit** (adds points) or **Debit** (subtracts points).
@@ -20,7 +20,7 @@ To perform a manual adjustment:
     *   **Reason**: A description of why the adjustment is being made. This will be visible to both the administrator and the customer in their dashboards.
 4.  Click **Submit** to process the adjustment.
 
-![Adjust Points Modal Form](/assets/screenshots/ledger-adjust-points-modal.png)
+![Adjust Points Form](/assets/screenshots/ledger-adjust-points-modal.png)
 
 ---
 

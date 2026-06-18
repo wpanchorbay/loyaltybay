@@ -54,20 +54,13 @@ If the ledger or settings panel fails to load:
 
 ---
 
-## Debug Mode & Logs
+## Error Logs
 
-If you encounter an unexplained error, enable debug logging to capture verbose trace messages.
+If you encounter an unexplained error, you can check the plugin's dedicated log file.
 
-### 1. Enabling Debug Logging
-1.  Navigate to **WooCommerce > Settings > Loyalty Points > Display & System**.
-2.  Check the **Debug Mode** checkbox.
-3.  Click **Save Changes**.
-
-![Debug Mode Admin Setting Toggle](/assets/screenshots/troubleshooting-debug-toggle.png)
-
-### 2. Log Location
-When debug logging is enabled, logs are written to:
+### Log Location
+LoyaltyBay writes its critical error logs (`ERROR` level) to a dedicated directory in your uploads folder, not the standard WooCommerce logger:
 ```text
 wp-content/uploads/loyaltybay-logs/plugin-log-YYYY-MM-DD.log
 ```
-*If debug mode is disabled, only critical system errors (`ERROR` level) are recorded in this log file.*
+*Note: This directory is automatically created by the plugin when errors occur.*

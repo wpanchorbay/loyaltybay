@@ -35,9 +35,6 @@ Configure how points are earned, excluded, and capped.
 | **Points for Registration** | `earning_pointsForRegistration` | Integer | `0` | Points credited instantly when a user registers. Set to `0` to disable. |
 | **Points for Product Review** | `earning_pointsForReview` | Integer | `0` | Points credited when a customer's review is approved. Set to `0` to disable. |
 | **Order Status Trigger** | `earning_orderStatusTrigger` | Select | `Completed` | The WooCommerce order status that triggers points crediting. |
-| **Excluded Products** | `earning_excludedProducts` | Multi-select | `[]` | Products that do not earn points. |
-| **Excluded Categories** | `earning_excludedCategories` | Multi-select | `[]` | Categories whose products do not earn points. |
-| **Max Points per Order** | `earning_maxPointsPerOrder` | Integer | `0` | Earning cap per order. Set to `0` for no limit. |
 
 ---
 
@@ -62,7 +59,6 @@ Configure organic customer acquisition and VIP bonuses.
 |---|---|---|---|---|
 | **Enable Referrals** | `referrals_enabled` | Boolean | `false` | Enable or disable the refer-a-friend program. |
 | **Referral Bonus Points** | `referrals_bonusPoints` | Integer | `1000` | Points awarded to the referrer after the referee's first purchase. |
-| **New Customer Discount** | `referrals_newCustomerDiscount` | Decimal | `10.00` | Monetary discount applied to a referee's first checkout order. |
 | **Cookie Duration (Days)** | `referrals_cookieDuration` | Integer | `30` | Lifespan of the referral tracking cookie. |
 | **Enable VIP Tiers** | `tiers_enabled` | Boolean | `false` | Enable or disable automatic loyalty tiers. |
 | **Tiers Config** | `tiers_config` | Repeater | *(Default Tiers)* | Defines VIP levels, thresholds, and multipliers (Bronze, Silver, Gold, Platinum). |
@@ -79,4 +75,3 @@ Control UI placements, logging, and uninstallation behavior.
 | **Custom CSS** | `appearance_customCss` | Textarea | `''` | Custom CSS injected into the public loyalty widgets for styling. |
 | **Widget Position** | `appearance_widgetPosition` | Select | `before_order_review` | Theme hook location for classic checkout redemption display. |
 | **Delete All on Uninstall** | `advanced_deleteAllOnUninstall` | Boolean | `false` | If enabled, completely drops custom tables and deletes all options when the plugin is deleted. |
-| **Debug Mode** | `debug_enableMode` | Boolean | `false` | If enabled, writes verbose debug logs. If disabled, only writes ERROR-level logs. |

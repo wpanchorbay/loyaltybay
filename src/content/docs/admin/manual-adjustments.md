@@ -20,7 +20,7 @@ To perform a manual adjustment:
     *   **Reason**: A description of why the adjustment is being made. This will be visible to both the administrator and the customer in their dashboards.
 4.  Click **Submit** to process the adjustment.
 
-![Adjust Points Form](/assets/screenshots/ledger-adjust-points-modal.png)
+![Adjust Points Form](/loyaltybay/assets/screenshots/ledger-adjust-points-modal.png)
 
 ---
 
@@ -43,7 +43,7 @@ Every manual adjustment is recorded permanently in the database ledger.
 *   **Reference ID**: Set to the WordPress User ID of the administrator who performed the action. This ensures complete internal accountability.
 *   **Description**: The text entered into the **Reason** field is saved with the ledger record and displays in the transaction logs.
 
-![Ledger Table Manual Adjustment Audit Log](/assets/screenshots/ledger-manual-entry-log.png)
+![Ledger Table Manual Adjustment Audit Log](/loyaltybay/assets/screenshots/ledger-manual-entry-log.png)
 
 ---
 

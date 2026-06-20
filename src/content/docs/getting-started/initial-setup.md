@@ -20,7 +20,7 @@ By default, the plugin awards 1 point for every $1 spent. You should configure t
     *   **Points for Product Review**: Points awarded when a logged-in user submits a product review, once it is **Approved** (e.g. 50 points).
 5.  Click **Save Changes** at the bottom of the page.
 
-    ![Conversion Rates Settings](/assets/screenshots/setup-conversion-rates.png)
+    ![Conversion Rates Settings](/loyaltybay/assets/screenshots/setup-conversion-rates.png)
 
 ---
 
@@ -37,7 +37,7 @@ Redemption settings control how customers convert their points into monetary dis
 4.  Set the **Minimum Points to Redeem**. The checkout points widget will remain hidden or locked unless the customer has accumulated at least this amount (default: `100`).
 5.  Set the **Max Discount %** (default: `50`). This prevents points from discounting more than a specified percentage of the cart total, ensuring you always maintain a healthy margin.
 
-    ![Redemption Mode Settings](/assets/screenshots/setup-redemption-mode.png)
+    ![Redemption Mode Settings](/loyaltybay/assets/screenshots/setup-redemption-mode.png)
 
 ---
 
@@ -52,7 +52,7 @@ To verify that points are credited accurately:
     *   **In the Admin Ledger**: Go to **WooCommerce > Loyalty**. You should see a credit entry for the test customer with a reference to the order ID.
     *   **On the Order Details**: Check the order totals block in the WooCommerce admin. It should contain a row highlighting the points earned.
     
-    ![Test Order Totals Points Earned](/assets/screenshots/setup-test-order-totals.png)
+    ![Test Order Totals Points Earned](/loyaltybay/assets/screenshots/setup-test-order-totals.png)
 
 ---
 

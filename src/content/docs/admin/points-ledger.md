@@ -14,7 +14,7 @@ To view the ledger:
 2.  Navigate to **WooCommerce > Loyalty**.
 3.  The main panel displays the **Points Ledger** table, built with a modern, responsive React interface.
 
-![Admin Ledger Table Overview](/assets/screenshots/ledger-admin-main.png)
+![Admin Ledger Table Overview](/loyaltybay/assets/screenshots/ledger-admin-main.png)
 
 ### Ledger Table Columns
 
@@ -46,6 +46,6 @@ You can export ledger reports for accounting, auditing, or marketing operations:
 1.  Click the **Export to CSV** button in the top right action bar.
 2.  The browser will automatically download the CSV file containing the ledger records.
 
-![CSV Export Button](/assets/screenshots/ledger-export-btn.png)
+![CSV Export Button](/loyaltybay/assets/screenshots/ledger-export-btn.png)
 
 *The CSV export ignores table pagination limits, exporting the entire ledger dataset.*

@@ -19,7 +19,7 @@ Settings are integrated directly into WooCommerce's settings dashboard:
     *   **Referrals & VIP Tiers**
     *   **Display & System**
 
-![WooCommerce Settings Tab Overview](/assets/screenshots/settings-tabs-overview.png)
+![WooCommerce Settings Tab Overview](/loyaltybay/assets/screenshots/settings-tabs-overview.png)
 
 ---
 

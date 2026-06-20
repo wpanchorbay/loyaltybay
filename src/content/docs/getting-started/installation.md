@@ -30,12 +30,12 @@ Before installation, verify that your server meets the following requirements:
 3.  Log in to your WordPress dashboard as an administrator.
 4.  Navigate to **Plugins > Add New** and click the **Upload Plugin** button at the top of the page.
     
-    ![Upload Plugin Interface](/assets/screenshots/getting-started-install-upload.png)
+    ![Upload Plugin Interface](/loyaltybay/assets/screenshots/getting-started-install-upload.png)
 
 5.  Click **Choose File**, select the downloaded `loyaltybay.zip` file, and click **Install Now**.
 6.  Once WordPress completes the upload and extraction, click the **Activate Plugin** button.
 
-    ![Activate Plugin Card](/assets/screenshots/getting-started-install-activate.png)
+    ![Activate Plugin Card](/loyaltybay/assets/screenshots/getting-started-install-activate.png)
 
 ### Method 2: Manual SFTP/FTP Installation
 
@@ -59,7 +59,7 @@ Upon activation, the plugin performs the following tasks automatically:
     *   `{prefix}_loyaltybay_cron_log` — Tracks scheduled background jobs.
 2.  **Add Menu Link**: Registers the **Loyalty** menu item under **WooCommerce**.
     
-    ![WooCommerce Loyalty Menu Highlight](/assets/screenshots/getting-started-menu-highlight.png)
+    ![WooCommerce Loyalty Menu Highlight](/loyaltybay/assets/screenshots/getting-started-menu-highlight.png)
 
 3.  **Register Custom Capabilities**: Adds the `manage_loyaltybay` capability to the `administrator` role.
 4.  **Rewrite Rules**: Registers the `/my-account/my-rewards/` endpoint and flushes WordPress rewrite rules so the customer dashboard is immediately accessible.

@@ -25,7 +25,7 @@ Displays the customer's current points balance in large, clear typography.
 *   Shows the exact points currently available.
 *   Indicates the equivalent monetary value of the points (based on the *Point Value* setting).
 
-![My Account Points Balance Widget](/assets/screenshots/dashboard-balance-widget.png)
+![My Account Points Balance Widget](/loyaltybay/assets/screenshots/dashboard-balance-widget.png)
 
 ### 2. VIP Tier Progress (If Enabled)
 Displays the customer's active VIP loyalty level inside the balance card.
@@ -33,7 +33,7 @@ Displays the customer's active VIP loyalty level inside the balance card.
 *   Displays the active tier's earning multiplier (e.g., 1x Earning Multiplier).
 *   Displays the remaining points required to upgrade to the next tier.
 
-![Customer My Account VIP Tier Progress](/assets/screenshots/tiers-my-account-progress.png)
+![Customer My Account VIP Tier Progress](/loyaltybay/assets/screenshots/tiers-my-account-progress.png)
 
 ### 3. Referral Sharing Card (If Enabled)
 Displays the customer's refer-a-friend links and statistics.
@@ -41,7 +41,7 @@ Displays the customer's refer-a-friend links and statistics.
 *   Features a single-click "Copy URL" button.
 *   Shows the count of successful referrals completed.
 
-![Customer My Account Referral Card](/assets/screenshots/referrals-my-account-link.png)
+![Customer My Account Referral Card](/loyaltybay/assets/screenshots/referrals-my-account-link.png)
 
 ### 4. Transaction History Table
 A detailed, paginated audit log of all point activities for the customer.
@@ -53,4 +53,4 @@ A detailed, paginated audit log of all point activities for the customer.
 *   **Amount**: The number of points credited or debited.
 *   **Description**: Detailed text indicating why the points were adjusted (e.g. *"Points earned for order #1234"* or *"Admin adjustment"*).
 
-![Customer Dashboard Transaction History Table](/assets/screenshots/dashboard-history-table.png)
+![Customer Dashboard Transaction History Table](/loyaltybay/assets/screenshots/dashboard-history-table.png)

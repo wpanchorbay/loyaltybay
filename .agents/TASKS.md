@@ -29,10 +29,10 @@ Use this checklist when adapting the Documentation Boilerplate for a new project
 
 ## Phase 2 — Branding & Assets
 
-- [ ] Replace `src/assets/wpanchorbay-icon.svg` with the project's navbar/logo icon (SVG).
-- [ ] Replace `src/assets/wpanchorbay-icon.png` with the same icon in PNG format (used in the homepage hero by Astro's image pipeline).
-- [ ] Keep `src/assets/wpanchorbay-logo.svg` for the WPAnchorBay footer unless the user explicitly asks to remove or rebrand the footer.
-- [ ] Replace `public/assets/wpanchorbay-icon.svg` with the project's favicon SVG.
+- [ ] Replace `src/assets/iocn_loyaltybay.svg` with the project's navbar/logo icon (SVG).
+- [ ] Replace `src/assets/iocn_loyaltybay.svg` with the same icon in PNG format (used in the homepage hero by Astro's image pipeline).
+- [ ] Keep `src/assets/iocn_loyaltybay.svg` for the WPAnchorBay footer unless the user explicitly asks to remove or rebrand the footer.
+- [ ] Replace `public/assets/iocn_loyaltybay.svg` with the project's favicon SVG.
 - [ ] Replace `public/assets/WPAnchorBay-Documentation-OG.png` with the project's OpenGraph image (1200×630 px recommended).
 - [ ] Verify all logo/icon variants look correct in **both light and dark modes**.
 - [ ] *(Optional)* Customize the homepage gradient/theme color by editing HSL variables in `src/styles/home.css` (`:root` and `:root[data-theme='dark']`).

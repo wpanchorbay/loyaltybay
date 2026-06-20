@@ -113,10 +113,10 @@ Replace placeholder/demo assets with project-specific assets:
 
 | Current File | Action |
 |---|---|
-| `src/assets/wpanchorbay-icon.svg` | Replace or rename to the new source logo icon. Update `LOGO_SVG_PATH`. |
-| `src/assets/wpanchorbay-icon.png` | Replace or rename to the homepage hero image. Update `index.mdx` imports/frontmatter if renamed. |
-| `src/assets/wpanchorbay-logo.svg` | Keep for the WPAnchorBay footer unless the user explicitly requests a different footer. |
-| `public/assets/wpanchorbay-icon.svg` | Replace or rename to the public favicon/logo. Update `ICON_HREF`. |
+| `src/assets/iocn_loyaltybay.svg` | Replace or rename to the new source logo icon. Update `LOGO_SVG_PATH`. |
+| `src/assets/iocn_loyaltybay.svg` | Replace or rename to the homepage hero image. Update `index.mdx` imports/frontmatter if renamed. |
+| `src/assets/iocn_loyaltybay.svg` | Keep for the WPAnchorBay footer unless the user explicitly requests a different footer. |
+| `public/assets/iocn_loyaltybay.svg` | Replace or rename to the public favicon/logo. Update `ICON_HREF`. |
 | `public/assets/WPAnchorBay-Documentation-OG.png` | Replace or rename to the OpenGraph image. Update `OG_IMAGE_HREF`, `FEED_LINKS.ogImage`, and frontmatter metadata. |
 
 Use 1200×630 px for OpenGraph images. Verify assets in light mode and dark mode.

@@ -28,10 +28,10 @@ Displays the customer's current points balance in large, clear typography.
 ![My Account Points Balance Widget](/assets/screenshots/dashboard-balance-widget.png)
 
 ### 2. VIP Tier Progress (If Enabled)
-Displays the customer's active VIP loyalty level.
-*   Shows current tier badge (e.g. Silver).
-*   Displays a visual progress bar indicating how close the customer is to reaching the next tier.
-*   Displays the remaining points required to upgrade.
+Displays the customer's active VIP loyalty level inside the balance card.
+*   Shows the current tier badge (e.g., Bronze Member).
+*   Displays the active tier's earning multiplier (e.g., 1x Earning Multiplier).
+*   Displays the remaining points required to upgrade to the next tier.
 
 ![Customer My Account VIP Tier Progress](/assets/screenshots/tiers-my-account-progress.png)
 

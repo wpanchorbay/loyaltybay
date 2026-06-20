@@ -77,11 +77,6 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 - **Description**: WooCommerce block checkout page on storefront.
 - **Key Highlight**: The React points slider widget showing user balance, slider control, and "Apply Discount" button.
 
-### `redemption-checkout-classic.png`
-- **Used in**: `features/redeeming-points.md` -> Section: *Redemption UI (Classic Checkout)*
-- **Description**: WooCommerce classic checkout page.
-- **Key Highlight**: The classic points redemption panel showing points form input and Apply button.
-
 ### `tiers-admin-repeater.png`
 - **Used in**: `features/vip-tiers.md` -> Section: *VIP Tiers Configuration*
 - **Description**: Settings page, Referrals & VIP Tiers tab.
@@ -95,7 +90,7 @@ These screenshots should be saved in the docs repository under `/home/sdd/Docume
 ### `referrals-admin-settings.png`
 - **Used in**: `features/referral-program.md` -> Section: *Referral Settings*
 - **Description**: Settings page, Referrals & VIP Tiers tab.
-- **Key Highlight**: Checkbox for "Enable Referrals", and inputs for "Referrals Bonus Points".
+- **Key Highlight**: Checkbox for "Enable Referrals", and input for "Referral Bonus Points".
 
 ### `referrals-my-account-link.png`
 - **Used in**: `features/referral-program.md` -> Section: *Customer My Account Referral panel*
